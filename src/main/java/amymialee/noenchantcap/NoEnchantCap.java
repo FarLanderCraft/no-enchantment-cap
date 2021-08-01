@@ -32,8 +32,9 @@ public class NoEnchantCap implements ModInitializer {
         try {
             if(configPath.toFile().exists()) {
                 config = daData.fromJson(new String(Files.readAllBytes(configPath)), EnchantModConfig.class);
+            } else {
+                Files.write(configPath, Collections.singleton(daData.toJson(daDataForReal)));
             }
-            Files.write(configPath, Collections.singleton(daData.toJson(daDataForReal)));
         } catch (IOException e) {
             e.printStackTrace();
         }
