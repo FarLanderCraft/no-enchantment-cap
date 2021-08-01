@@ -16,24 +16,17 @@ import java.util.Collection;
 public class EnchantCommandMixin {
 
     @Redirect(method = "execute", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;getMaximumLevel()I"))
-    private static int redirectGetMaxLevel(Enchantment enchantment) {
+    private int redirectGetMaximumLevel(Enchantment enchantment) {
         return 32766;
     }
 
     @Redirect(method = "execute", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;isAcceptableItem(Lnet/minecraft/item/ItemStack;)Z"))
-    private static boolean redirectIsAcceptableItem(Enchantment enchantment, ItemStack stack) {
-        return true;
-    }
-
-
-    /*broken as of now*/
-    @Redirect(method = "execute", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/EnchantmentHelper;isCompatible(Ljava/util/Collection;Lnet/minecraft/enchantment/Enchantment;)Z"))
-    private static boolean redirectIsCompatible(Collection<Enchantment> existing, Enchantment candidate) {
+    private boolean redirectIsAcceptableItem(Enchantment enchantment, ItemStack stack) {
         return true;
     }
 
     @Redirect(method = "execute", at = @At(value = "INVOKE", target = "Lnet/minecraft/item/ItemStack;addEnchantment(Lnet/minecraft/enchantment/Enchantment;I)V"))
-    private static void redirectAddEnchantment(ItemStack itemStack, Enchantment enchantment, int level) {
+    private void redirectAddEnchantment(ItemStack itemStack, Enchantment enchantment, int level) {
         itemStack.getOrCreateSubTag("");
         try {
             assert itemStack.getTag() != null;
