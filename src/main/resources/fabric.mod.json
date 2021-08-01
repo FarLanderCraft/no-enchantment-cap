@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "noenchantcap",
-  "version": "${version}",
+  "version": "1.12.2-1.0",
   "name": "NoEnchantCap",
   "description": "Removes the limit on combining enchantments.",
   "authors": [
@@ -24,8 +24,8 @@
   ],
   "depends": {
     "fabricloader": "*",
-    "fabric": "*",
-    "minecraft": ">=1.16.2"
+
+    "minecraft": "1.12.2"
   },
   "custom": {
     "modupdater": {

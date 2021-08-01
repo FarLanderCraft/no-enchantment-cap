@@ -1,52 +1,63 @@
 package amymialee.noenchantcap;
 
-import me.shedaniel.autoconfig.ConfigData;
-import me.shedaniel.autoconfig.annotation.Config;
+public class EnchantModConfig {
+    public final boolean removeAnvilLimit;
+    public final boolean allowAllEnchantmentCombinations;
+    public final boolean allowAnyEnchantOnAnyItem;
+    public final boolean useGlobalEnchantCap;
+    public final int globalEnchantCap;
+    public final int protectionCap;
+    public final int protectionFireCap;
+    public final int protectionBlastCap;
+    public final int protectionProjectileCap;
+    public final int respirationCap;
+    public final int thornsCap;
+    public final int frostWalkerCap;
+    public final int depthStriderCap;
+    public final int featherFallingCap;
+    public final int smiteCap;
+    public final int sharpnessCap;
+    public final int baneOfArthropodsCap;
+    public final int knockbackCap;
+    public final int fireAspectCap;
+    public final int lootingCap;
+    public final int sweepingCap;
+    public final int efficiencyCap;
+    public final int fortuneCap;
+    public final int powerCap;
+    public final int punchCap;
+    public final int lureCap;
+    public final int luckOfTheSeaCap;
+    public final int unbreakingCap;
 
-@Config(name = "noenchantcap")
-public
-class EnchantModConfig implements ConfigData {
-    public boolean removeAnvilLimit = true;
-    public boolean allowAllEnchantmentCombinations = false;
-    public boolean allowAnyEnchantOnAnyItem = false;
-
-    public boolean useGlobalEnchantCap = true;
-    public int globalEnchantCap = 10;
-
-    public int protectionCap = 4;
-    public int protectionFireCap = 4;
-    public int protectionBlastCap = 4;
-    public int protectionProjectileCap = 4;
-
-    public int respirationCap = 3;
-    public int thornsCap = 3;
-    public int frostWalkerCap = 2;
-    public int soulSpeedCap = 3;
-    public int depthStriderCap = 3;
-    public int featherFallingCap = 4;
-
-    public int smiteCap = 5;
-    public int sharpnessCap = 5;
-    public int baneOfArthropodsCap = 5;
-    public int knockbackCap = 2;
-    public int fireAspectCap = 2;
-    public int lootingCap = 3;
-    public int sweepingCap = 3;
-
-    public int efficiencyCap = 5;
-    public int fortuneCap = 3;
-
-    public int powerCap = 5;
-    public int punchCap = 2;
-
-    public int lureCap = 3;
-    public int luckOfTheSeaCap = 3;
-
-    public int impalingCap = 5;
-    public int loyaltyCap = 3;
-
-    public int quickChargeCap = 3;
-    public int piercingCap = 4;
-
-    public int unbreakingCap = 3;
+    public EnchantModConfig(boolean a, boolean b, boolean c, boolean d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p, int q, int r, int s, int t, int u, int v, int w, int x, int y, int z, int iRanOut, int ofAlphabet) {
+        this.removeAnvilLimit = a; //true
+        this.allowAllEnchantmentCombinations = b;//false
+        this.allowAnyEnchantOnAnyItem = c;//false
+        this.useGlobalEnchantCap = d;
+        this.globalEnchantCap = e;//10
+        this.protectionCap = f;//4
+        this.protectionFireCap = g;//4
+        this.protectionBlastCap = h;//4
+        this.protectionProjectileCap = i;//4
+        this.respirationCap = j;//3
+        this.thornsCap = k;//3
+        this.frostWalkerCap = l;//2
+        this.depthStriderCap = m;//3
+        this.featherFallingCap = n;//4
+        this.smiteCap = o;//5
+        this.sharpnessCap = p;//5
+        this.baneOfArthropodsCap = q;//5
+        this.knockbackCap = r;//2
+        this.fireAspectCap = s;//2
+        this.lootingCap = t;//3
+        this.sweepingCap = u;//3
+        this.efficiencyCap = v;//5
+        this.fortuneCap = w;//3
+        this.powerCap = x;//5
+        this.punchCap = y;//2
+        this.lureCap = z;//3
+        this.luckOfTheSeaCap = iRanOut;//3
+        this.unbreakingCap = ofAlphabet;//3
+    }
 }
