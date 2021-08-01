@@ -5,7 +5,8 @@
   "name": "NoEnchantCap",
   "description": "Removes the limit on combining enchantments.",
   "authors": [
-    "AmyMialee"
+    "AmyMialee (Mainline 1.17)",
+    "FarlanderCraft (1.12.2 backport)"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/no-enchant-cap",
