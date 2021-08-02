@@ -1,7 +1,5 @@
 package amymialee.noenchantcap.mixin;
 
-
-import amymialee.noenchantcap.EnchantModConfig;
 import amymialee.noenchantcap.NoEnchantCap;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
