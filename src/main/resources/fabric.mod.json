@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "noenchantcap",
-  "version": "1.8.9-1.2",
+  "version": "1.7.10-1.2",
   "name": "NoEnchantCap",
   "description": "Removes the limit on combining enchantments.",
   "authors": [
@@ -26,7 +26,10 @@
   "depends": {
     "fabricloader": "*",
 
-    "minecraft": "1.8.x"
+    "minecraft": [
+      "1.7.x",
+      "1.8.x"
+    ]
   },
   "custom": {
     "modupdater": {
