@@ -1,7 +1,7 @@
 package amymialee.noenchantcap.mixin;
 
-import net.minecraft.container.AnvilContainer;
 import net.minecraft.enchantment.Enchantment;
+import net.minecraft.screen.AnvilScreenHandler;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Constant;
@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import static amymialee.noenchantcap.NoEnchantCap.config;
 
-@Mixin(AnvilContainer.class)
+@Mixin(AnvilScreenHandler.class)
 public class AnvilScreenHandlerMixin {
     @Redirect(method = "updateResult", at = @At(value = "INVOKE", target = "Lnet/minecraft/enchantment/Enchantment;getMaximumLevel()I"))
     private int redirectGetMaxLevel(Enchantment enchantment) {
@@ -20,7 +20,7 @@ public class AnvilScreenHandlerMixin {
             if (config.useGlobalEnchantCap) {
                 return config.globalEnchantCap;
             } else {
-                switch (enchantment.method_25753()) {
+                switch (enchantment.getTranslationKey()) {
                     case "enchantment.minecraft.sharpness":
                         return config.sharpnessCap;
                     case "enchantment.minecraft.smite":
@@ -31,8 +31,6 @@ public class AnvilScreenHandlerMixin {
                         return config.knockbackCap;
                     case "enchantment.minecraft.fire_aspect":
                         return config.fireAspectCap;
-                    case "enchantment.minecraft.sweeping":
-                        return config.sweepingCap;
                     case "enchantment.minecraft.protection":
                         return config.protectionCap;
                     case "enchantment.minecraft.fire_protection":
@@ -47,8 +45,6 @@ public class AnvilScreenHandlerMixin {
                         return config.respirationCap;
                     case "enchantment.minecraft.depth_strider":
                         return config.depthStriderCap;
-                    case "enchantment.minecraft.frost_walker":
-                        return config.frostWalkerCap;
                     case "enchantment.minecraft.efficiency":
                         return config.efficiencyCap;
                     case "enchantment.minecraft.unbreaking":
@@ -74,22 +70,7 @@ public class AnvilScreenHandlerMixin {
         }
     }
 
-    @Redirect(method = "updateResult", at = @At(value = "INVOKE",
-            target = "Lnet/minecraft/enchantment/Enchantment;isDifferent(Lnet/minecraft/enchantment/Enchantment;)Z"))
-    private boolean redirectCanCombine(Enchantment enchantment, Enchantment enchantment2) {
-        if (config.allowAllEnchantmentCombinations) {
-            if (enchantment.method_25753().equals("enchantment.minecraft.silk_touch") &&
-                    enchantment2.method_25753().equals("enchantment.minecraft.fortune") ||
-                    enchantment.method_25753().equals("enchantment.minecraft.fortune") &&
-                    enchantment2.method_25753().equals("enchantment.minecraft.silk_touch")) {
-                return false;
-            }
-            return true;
-        }
-        return enchantment.isDifferent(enchantment2);
-    }
-
-    @ModifyConstant(method = "updateResult", constant = @Constant(intValue = 40, ordinal = 2))
+    @ModifyConstant(method = "updateResult", constant = @Constant(intValue = 40, ordinal = 1))
     private int modifyMaxCost(int original) {
         if (config.removeAnvilLimit) {
             return 50000;

@@ -7,7 +7,6 @@
     "AnvilScreenHandlerMixin",
     "AnvilScreenMixin",
     "EnchantCommandMixin",
-    "InfinityEnchantmentMixin",
     "EnchantmentMixin"
   ],
   "injectors": {

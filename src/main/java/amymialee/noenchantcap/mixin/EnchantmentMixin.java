@@ -13,19 +13,19 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Enchantment.class)
 public abstract class EnchantmentMixin {
-    @Shadow public EnchantmentTarget type;
+    @Shadow public EnchantmentTarget target;
 
-    @Shadow public abstract String method_25753();
+    @Shadow public abstract String getTranslationKey();
 
     @Inject(method = "isAcceptableItem", at = @At(value = "HEAD"), cancellable = true)
     public void isAcceptableItem(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
         if (NoEnchantCap.config.allowAnyEnchantOnAnyItem) {
             cir.setReturnValue(true);
         } else {
-            if (this.method_25753().equals("enchantment.minecraft.looting") && stack.getItem() instanceof AxeItem) {
+            if (this.getTranslationKey().equals("enchantment.minecraft.looting") && stack.getItem() instanceof AxeItem) {
                 cir.setReturnValue(true);
             } else {
-                cir.setReturnValue(this.type.isAcceptableItem(stack.getItem()));
+                cir.setReturnValue(this.target.isCompatible(stack.getItem()));
             }
         }
     }

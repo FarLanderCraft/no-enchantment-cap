@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "id": "noenchantcap",
-  "version": "1.12.2-1.0",
+  "version": "1.8.9-1.2",
   "name": "NoEnchantCap",
   "description": "Removes the limit on combining enchantments.",
   "authors": [
     "AmyMialee (Mainline 1.17)",
-    "FarlanderCraft (1.12.2 backport)"
+    "FarlanderCraft (1.8.9 backport)"
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/no-enchant-cap",
@@ -26,7 +26,7 @@
   "depends": {
     "fabricloader": "*",
 
-    "minecraft": "1.12.2"
+    "minecraft": "1.8.x"
   },
   "custom": {
     "modupdater": {

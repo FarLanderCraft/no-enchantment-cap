@@ -2,7 +2,6 @@ package amymialee.noenchantcap;
 
 public class EnchantModConfig {
     public final boolean removeAnvilLimit;
-    public final boolean allowAllEnchantmentCombinations;
     public final boolean allowAnyEnchantOnAnyItem;
     public final boolean useGlobalEnchantCap;
     public final int globalEnchantCap;
@@ -12,7 +11,6 @@ public class EnchantModConfig {
     public final int protectionProjectileCap;
     public final int respirationCap;
     public final int thornsCap;
-    public final int frostWalkerCap;
     public final int depthStriderCap;
     public final int featherFallingCap;
     public final int smiteCap;
@@ -21,7 +19,6 @@ public class EnchantModConfig {
     public final int knockbackCap;
     public final int fireAspectCap;
     public final int lootingCap;
-    public final int sweepingCap;
     public final int efficiencyCap;
     public final int fortuneCap;
     public final int powerCap;
@@ -30,9 +27,8 @@ public class EnchantModConfig {
     public final int luckOfTheSeaCap;
     public final int unbreakingCap;
 
-    public EnchantModConfig(boolean a, boolean b, boolean c, boolean d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p, int q, int r, int s, int t, int u, int v, int w, int x, int y, int z, int iRanOut, int ofAlphabet) {
+    public EnchantModConfig(boolean a, boolean c, boolean d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p, int q, int r, int s, int t, int u, int v, int w, int x, int y, int z, int iRanOut, int ofAlphabet) {
         this.removeAnvilLimit = a; //true
-        this.allowAllEnchantmentCombinations = b;//false
         this.allowAnyEnchantOnAnyItem = c;//false
         this.useGlobalEnchantCap = d;
         this.globalEnchantCap = e;//10
@@ -42,7 +38,6 @@ public class EnchantModConfig {
         this.protectionProjectileCap = i;//4
         this.respirationCap = j;//3
         this.thornsCap = k;//3
-        this.frostWalkerCap = l;//2
         this.depthStriderCap = m;//3
         this.featherFallingCap = n;//4
         this.smiteCap = o;//5
@@ -51,7 +46,6 @@ public class EnchantModConfig {
         this.knockbackCap = r;//2
         this.fireAspectCap = s;//2
         this.lootingCap = t;//3
-        this.sweepingCap = u;//3
         this.efficiencyCap = v;//5
         this.fortuneCap = w;//3
         this.powerCap = x;//5

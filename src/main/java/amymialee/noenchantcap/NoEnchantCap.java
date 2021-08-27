@@ -17,7 +17,7 @@ public class NoEnchantCap implements ModInitializer {
     Path configPath = Paths.get("config/no-enchantment-cap.json");
     public Gson daData = new GsonBuilder().setPrettyPrinting().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
 
-    EnchantModConfig daDataForReal = new EnchantModConfig(true, false, false, true, 10, 4, 4, 4, 4,3, 3, 2, 3, 4, 5, 5, 5, 2, 2, 3, 3, 5, 3, 5, 2, 3, 3, 3);
+    EnchantModConfig daDataForReal = new EnchantModConfig(true,false, true, 10, 4, 4, 4, 4,3, 3, 2, 3, 4, 5, 5, 5, 2, 2, 3, 3, 5, 3, 5, 2, 3, 3, 3);
     public void setDaData(Gson daData) {
         this.daData = daData;
 
